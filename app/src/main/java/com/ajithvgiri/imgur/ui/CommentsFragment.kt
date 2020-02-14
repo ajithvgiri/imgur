@@ -5,7 +5,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ajithvgiri.imgur.R
 import com.ajithvgiri.imgur.adapter.CommentsAdapter
@@ -13,11 +12,7 @@ import com.ajithvgiri.imgur.api.ApiInterface
 import com.ajithvgiri.imgur.api.RetrofitService
 import com.ajithvgiri.imgur.api.model.Comment
 import com.ajithvgiri.imgur.api.model.Comments
-import com.ajithvgiri.imgur.api.model.GallerySearch
-import com.ajithvgiri.imgur.story.Story
-import com.ajithvgiri.imgur.story.StoryView
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.bottom_sheet_comments.*
 import retrofit2.Call
 import retrofit2.Callback

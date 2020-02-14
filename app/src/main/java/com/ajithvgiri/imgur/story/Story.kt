@@ -7,16 +7,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
-import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.ajithvgiri.imgur.R
 import kotlinx.android.synthetic.main.layout_story_view.view.*
+import kotlin.math.max
 
 class Story(
     context: Context,
-    var listOfStoryView: List<StoryView>,
+    private var listOfStoryView: List<StoryView>,
     passedInContainerView: ViewGroup,
-    var storyCallback: StoryCallback
+    private var storyCallback: StoryCallback
 ) : ConstraintLayout(context) {
 
     private var currentlyShownIndex = 0
@@ -90,7 +90,7 @@ class Story(
     fun show() {
         view.progressBar.visibility = View.GONE
         if (currentlyShownIndex != 0) {
-            for (i in 0..Math.max(0, currentlyShownIndex - 1)) {
+            for (i in 0..max(0, currentlyShownIndex - 1)) {
                 listOfProgressBar[i].progress = 100
                 listOfProgressBar[i].cancelProgress()
             }

@@ -16,11 +16,9 @@ import kotlinx.android.synthetic.main.activity_image_detail_view.*
 
 class ImageDetailViewActivity : AppCompatActivity() {
 
-    var image: Images? = null
-    var galleryHash: String? = null
-    var tags: ArrayList<Tags>? = null
-
-    var details: ImageDetails? = null
+    private var image: Images? = null
+    private var tags: ArrayList<Tags>? = null
+    private var details: ImageDetails? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +30,6 @@ class ImageDetailViewActivity : AppCompatActivity() {
 
         image = details?.images
         tags = details?.tags as ArrayList<Tags>
-        galleryHash = details?.galleryHash
 
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -65,7 +62,7 @@ class ImageDetailViewActivity : AppCompatActivity() {
         }
 
         if (item.itemId == R.id.menu_comments) {
-            galleryHash?.let {
+            details?.galleryHash?.let {
                 val commentsFragment = CommentsFragment().newInstance(it)
                 commentsFragment.show(supportFragmentManager, "comments_dialog_fragment")
             }
