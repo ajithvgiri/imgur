@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Imgur</string>
+    <string name="menu_comments">Comments</string>
+    <string name="no_comments_found">No comments found !</string>
+</resources>

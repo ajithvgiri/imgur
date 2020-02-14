@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_comments"
+        android:icon="@drawable/ic_baseline_comment_24"
+        android:title="@string/menu_comments"
+        app:showAsAction="ifRoom" />
+</menu>
