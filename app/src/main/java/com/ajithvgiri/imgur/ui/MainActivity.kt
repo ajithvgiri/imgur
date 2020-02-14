@@ -100,9 +100,12 @@ class MainActivity : AppCompatActivity(), StoryCallback {
     }
 
     override fun onDetailView(index: Int) {
-        val intent = Intent(this@MainActivity, ImageDetailViewActivity::class.java)
-        intent.putExtra("image_details", listOfDetailImage[index])
-        startActivity(intent)
+        val imageUrl = listOfDetailImage[index].images.link
+        memoryCache[imageUrl].let {
+            val intent = Intent(this@MainActivity, ImageDetailViewActivity::class.java)
+            intent.putExtra("image_details",listOfDetailImage[index] )
+            startActivity(intent)
+        }
     }
 
     fun loadBitmap(
